@@ -3,7 +3,7 @@
 while getopts ":f:" opt; do
   case $opt in
     f)
-      echo "-f using file: $OPTARG" >&2
+      echo "-f using file: $OPTARG" > /dev/null
       PKG_FILE=$OPTARG
       ;;
     \?)
