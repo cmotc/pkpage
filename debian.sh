@@ -6,7 +6,7 @@ SOURCEDOC=README.md
 DEBFOLDER=pkpage
 DEBVERSION=$(date +%Y%m%d)
 CONTROL_FILE="Source: pkpage
-Section: unknown
+Section: admin
 Priority: optional
 Maintainer: idk <eyedeekay@i2pmail.org>
 Build-Depends: debhelper (>= 9)
