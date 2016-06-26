@@ -21,8 +21,6 @@ if [ ! -f $PKG_FILE ]; then
     exit 1
 fi
 
-echo $PKG_FILE >&2
-
 PKG_INFO=$(dpkg --info $PKG_FILE)
 
 dpkg --info $PKG_FILE | grep 'Package:' | sed -e 's/^[ \t]*//'
@@ -37,7 +35,10 @@ dpkg --info $PKG_FILE | grep 'Recommends:' | sed -e 's/^[ \t]*//' | sed -e 's/Re
 dpkg --info $PKG_FILE | grep 'Provides:' | sed -e 's/^[ \t]*//' | sed -e 's/Provides:/###Provides:\n  */'
 echo -n "####" && dpkg --info $PKG_FILE | grep 'Section:' | sed -e 's/^[ \t]*//'
 echo -n "####" && dpkg --info $PKG_FILE | grep 'Priority:' | sed -e 's/^[ \t]*//'
-#echo$(
+DESCRIPTION_START=$(dpkg --info $PKG_FILE |  grep -n Description |  tr -d '[A-Za-z]' | tr -d ':-. ' )
+TOTAL_LINES=$(dpkg --info $PKG_FILE | nl | tail -1 |  tr -d '[A-Za-z]' | tr -d '\-:=. ' )
+TAIL_NUM=$(expr $TOTAL_LINES - $DESCRIPTION_START + 1)
+dpkg --info $PKG_FILE | tail -n $TAIL_NUM | sed -e 's/^[ \t]*//' | sed -e 's/Description:/###Description:\n[/'
 PKG_URL=$(dpkg --info $PKG_FILE | grep 'Homepage:' | sed -e 's/Homepage:/ /' | sed -e 's/^[ \t]*//') #)
 dpkg --info $PKG_FILE | grep 'Homepage:' | sed -e 's/^[ \t]*//' | sed -e 's/Homepage:/Homepage:[/' | tr "\n" " " && echo "]($PKG_URL)"
 echo -----------------
