@@ -2,8 +2,6 @@
 # Configure your paths and filenames
 SOURCEBINPATH=.
 SOURCEBIN=pkpage.sh
-SOURCEBINH=hdpage.sh
-SUPPBIN=hdpage
 SOURCEDOC=README.md
 DEBFOLDER=pkpage
 DEBVERSION=$(date +%Y%m%d)
@@ -38,7 +36,6 @@ mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
 cp $SOURCEBINPATH/$SOURCEBIN $DEBFOLDERNAME/$DEBFOLDER
-cp $SOURCEBINPATH/$SOURCEBINH $DEBFOLDERNAME/$SUPPBIN
 cd $DEBFOLDERNAME
 
 # Create the packaging skeleton (debian/*)
