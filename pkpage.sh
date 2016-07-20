@@ -23,26 +23,6 @@ fi
 
 PKG_INFO=$(dpkg --info $PKG_FILE)
 
-DOCTYPE_HEADER='<!DOCTYPE html>'
-HTML='<html>'
-if [ -z $TITLE ]; then
-        TITLE='web page'
-fi
-if [ ! -z $LANG ]; then
-        HTML="<html lang=$LANG>"
-fi
-HEADER="<head>\n
-\t<meta charset=\"utf-8\">\n
-\t<title>$TITLE</title>\n
-\t<link rel=\"stylesheet\" href=\"style.css\">\n
-\t<script src=\"script.js\"></script>\n
-</head>\n
-"
-
-echo $DOCTYPE_HEADER
-echo $HTML
-echo $HEADER
-
 dpkg --info $PKG_FILE | grep 'Package:' | sed -e 's/^[ \t]*//'
 echo =================
 dpkg --info $PKG_FILE | grep 'Source:' | sed -e 's/^[ \t]*//'
@@ -63,4 +43,3 @@ PKG_URL=$(dpkg --info $PKG_FILE | grep 'Homepage:' | sed -e 's/Homepage:/ /' | s
 dpkg --info $PKG_FILE | grep 'Homepage:' | sed -e 's/^[ \t]*//' | sed -e 's/Homepage:/Homepage:[/' | tr "\n" " " && echo "]($PKG_URL)"
 echo -----------------
 
-echo "</html>"
