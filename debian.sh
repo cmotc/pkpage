@@ -4,6 +4,8 @@ SOURCEBINPATH=.
 SOURCEBIN=pkpage.sh
 SOURCEDOC=README.md
 DEBFOLDER=pkpage
+WRAP=pkpage-wrap
+WRAP_HTML=pkpage-html
 DEBVERSION=$(date +%Y%m%d)
 CONTROL_FILE="Source: pkpage
 Section: admin
@@ -17,7 +19,7 @@ Vcs-Browser: https://github.com/cmotc/pkpage
 
 Package: pkpage
 Architecture: all
-Depends: \${misc:Depends}, markdown
+Depends: \${misc:Depends}, markdown | discount
 Description: Generates a Markdown-formatted description of a software package
  and a corresponding html page. For use with my repo generator, apt-git so that
  it can generate package description pages automatically and make the
@@ -36,6 +38,7 @@ mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
 cp $SOURCEBINPATH/$SOURCEBIN $DEBFOLDERNAME/$DEBFOLDER
+cp $SOURCEBINPATH/$WRAP $DEBFOLDERNAME/$WRAP
 cd $DEBFOLDERNAME
 
 # Create the packaging skeleton (debian/*)
@@ -49,6 +52,7 @@ mv debian/rules.new debian/rules
 # debian/install must contain the list of scripts to install
 # as well as the target directory
 echo $DEBFOLDER usr/bin > debian/install
+echo $WRAP usr/bin >> debian/install
 #echo $SOURCEDOC usr/share/doc/apt-git >> debian/install
 
 # Remove the example files

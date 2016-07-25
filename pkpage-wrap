@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 DOCTYPE_HEADER='<!DOCTYPE html>'
 HTML='<html>'
 if [ -z $TITLE ]; then
@@ -10,13 +10,13 @@ fi
 HEADER="<head>\n
 \t<meta charset=\"utf-8\">\n
 \t<title>$TITLE</title>\n
-\t<link rel=\"stylesheet\" href=\"style.css\">\n
+\t<link rel=\"stylesheet\" href=\"../style.css\">\n
 \t<script src=\"script.js\"></script>\n
 </head>\n
 "
 
 echo $DOCTYPE_HEADER
 echo $HTML
-echo -e $HEADER
-markdown <(pkpage $@)
+printf "%b\n" $HEADER
+pkpage $@
 echo "</html>"

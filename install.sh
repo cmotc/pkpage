@@ -4,8 +4,8 @@ install_pkpage(){
         sudo chmod a+x /usr/local/bin/pkpage
         sudo cp pkpage-wrap /usr/local/bin/pkpage-html
         sudo chmod a+x /usr/local/bin/pkpage-html
-        sudo cp hdpage.sh /usr/local/bin/hdpage
-        sudo chmod a+x /usr/local/bin/hdpage
+#        sudo cp hdpage.sh /usr/local/bin/hdpage
+#        sudo chmod a+x /usr/local/bin/hdpage
 }
 remove_pkpage(){
         sudo rm /usr/local/bin/pkpage
