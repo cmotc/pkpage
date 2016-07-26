@@ -42,7 +42,7 @@ cp $SOURCEBINPATH/$WRAP $DEBFOLDERNAME/$WRAP
 cd $DEBFOLDERNAME
 
 # Create the packaging skeleton (debian/*)
-dh_make -s --indep --createorig
+dh_make --indep --createorig
 echo "$CONTROL_FILE" > debian/control
 
 # Remove make calls
