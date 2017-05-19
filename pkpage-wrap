@@ -18,5 +18,7 @@ HEADER="<head>\n
 echo $DOCTYPE_HEADER
 echo $HTML
 printf "%b\n" $HEADER
+echo "  <body>"
 pkpage -p -f "$@"
+echo "  </body>"
 echo "</html>"
