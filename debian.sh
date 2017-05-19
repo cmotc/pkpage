@@ -1,7 +1,7 @@
 #! /bin/sh
 # Configure your paths and filenames
 SOURCEBINPATH=.
-SOURCEBIN=pkpage.sh
+SOURCEBIN=pkpage
 SOURCEDOC=README.md
 DEBFOLDER=pkpage
 DEBVERSION=$(date +%Y%m%d)
