@@ -1,9 +1,9 @@
-11752407aa0fc908035832f06623847f  usr/bin/pkpage
-4b68cf42ce0dbb42782adf289892d700  usr/bin/pkpage-wrap
+6d79accdf20fb5e315c63fb6877cc4fa  usr/bin/pkpage
+2ecf9d0dae0610c6a5c5795216ca581b  usr/bin/pkpage-wrap
+904d37c60c70ffb534d28cc8e453593e  usr/share/doc/pkpage/LICENSE.gz
 c95fbd563bc73933c0cb9966bf191180  usr/share/doc/pkpage/README.Debian
 813555c068ab857c360259fea370ea77  usr/share/doc/pkpage/changelog.Debian.gz
 16548c231413c5e5d918b97c08ee61ca  usr/share/doc/pkpage/copyright
-904d37c60c70ffb534d28cc8e453593e  usr/share/doc/scpage/LICENSE.gz
-39fa55672bc374728bef26c022035b1e  usr/share/doc/scpage/index.html
-39fa55672bc374728bef26c022035b1e  usr/share/doc/scpage/pkpage.html
-a5fb5e2f4d90c6ad02e4f63b86fd3232  usr/share/doc/scpage/style.css
+39fa55672bc374728bef26c022035b1e  usr/share/doc/pkpage/index.html
+39fa55672bc374728bef26c022035b1e  usr/share/doc/pkpage/pkpage.html
+a5fb5e2f4d90c6ad02e4f63b86fd3232  usr/share/doc/pkpage/style.css
